@@ -9,22 +9,22 @@ class Solution:
             print(current.data,end=' ')
             current = current.next
             
-              
     def insert(self,head,data):
-    #Complete this method
-        node = Node(data)
-        if head==None :
-            return node
-        else :
-            currentNode=head;
-            while currentNode.next != None :
-                currentNode=currentNode.next;
-            currentNode.next=node
-            return head
+        nodeData = Node(data)
+        if head is None:
+            head = nodeData
+        else:
+            current = head
+            while current.next:
+                current = current.next
+            current.next = nodeData
+        return head
+
+            
 mylist= Solution()
 T=int(input())
 head=None
 for i in range(T):
     data=int(input())
     head=mylist.insert(head,data)    
-mylist.display(head); 	  
+mylist.display(head); 
